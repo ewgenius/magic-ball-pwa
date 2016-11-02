@@ -96,8 +96,9 @@ export default class MagicBallApp extends Component<MagicBallAppProps, MagicBall
         flexAuto>
         <Box
           className='triangle'
-          align='center'
-          ></Box>
+          align='center'>
+          <span>text</span>
+        </Box>
       </Flex>
     </Flex>
   }
