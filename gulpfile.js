@@ -4,7 +4,9 @@ const util = require('gulp-util')
 const WebpackDevServer = require('webpack-dev-server')
 const configurer = require('./webpack.config')
 
-const devConfig = configurer('development')
+const PORT = 8081
+
+const devConfig = configurer('development', PORT)
 const prodConfig = configurer('production')
 
 gulp.task('assets', () => {
@@ -38,8 +40,6 @@ gulp.task('serve', () => {
       colors: true
     }
   })
-
-  const PORT = 8080
 
   server.listen(PORT, 'localhost', err => {
     if (err) throw new util.PluginError('webpack-dev-server', err)

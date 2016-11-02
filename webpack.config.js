@@ -36,12 +36,12 @@ const baseConfig = {
   plugins: []
 }
 
-exports = module.exports = (env = 'development') => {
+exports = module.exports = (env = 'development', port = 8080) => {
   switch (env) {
     case 'development':
       return Object.assign({}, baseConfig, {
         entry: {
-          app: ['webpack-dev-server/client?http://localhost:8080/', 'webpack/hot/dev-server', path.join(__dirname, './src/app.tsx')],
+          app: [`webpack-dev-server/client?http://localhost:${port}/`, 'webpack/hot/dev-server', path.join(__dirname, './src/app.tsx')],
         },
         devtool: 'source-map',
         plugins: [

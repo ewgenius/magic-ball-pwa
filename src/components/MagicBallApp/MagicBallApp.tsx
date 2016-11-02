@@ -1,6 +1,7 @@
 import './MagitBallApp.scss'
 import * as React from 'react'
 import { Props, Component } from 'react'
+import { Flex, Box } from 'reflexbox'
 
 export interface MagicBallAppProps extends Props<MagicBallApp> {
 
@@ -58,14 +59,32 @@ export default class MagicBallApp extends Component<MagicBallAppProps, MagicBall
   }
 
   render() {
-    return <div className='magicball-app'>
-      x: {this.state.accelerationX}<br />
-      y: {this.state.accelerationY}<br />
-      z: {this.state.accelerationZ}<br />
+    return <Flex
+      flexColumn
+      className='magicball-app'
+      >
+      <Flex align='center'>
+        x: {this.state.accelerationX}<br />
+        y: {this.state.accelerationY}<br />
+        z: {this.state.accelerationZ}<br />
 
-      alpha: {this.state.alpha}<br />
-      beta: {this.state.beta}<br />
-      gamma: {this.state.gamma}<br />
-    </div>
+        alpha: {this.state.alpha}<br />
+        beta: {this.state.beta}<br />
+        gamma: {this.state.gamma}<br />
+      </Flex>
+      <Flex
+        align='center'
+        justify='center'
+        flexAuto>
+        <Box
+          align='center'
+          style={{
+            width: 200,
+            height: 200,
+            backgroundColor: '#000',
+            transform: `rotateZ(${this.state.alpha - 180}deg) rotateX(${this.state.beta}deg) rotateY(${-this.state.gamma}deg)`
+          }}></Box>
+      </Flex>
+    </Flex>
   }
 } 
