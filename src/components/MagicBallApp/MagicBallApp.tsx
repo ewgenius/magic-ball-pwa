@@ -3,11 +3,15 @@ import * as React from 'react'
 import { Props, Component } from 'react'
 import { Flex, Box } from 'reflexbox'
 
-export interface MagicBallAppProps extends Props<MagicBallApp> {
-
+export enum ControlType {
+  CLICK,
+  ORIENTATION
 }
 
+export interface MagicBallAppProps extends Props<MagicBallApp> { }
+
 export interface MagicBallAppState {
+  controlType?: ControlType,
   accelerationX?: number
   accelerationY?: number
   accelerationZ?: number
@@ -21,6 +25,7 @@ export default class MagicBallApp extends Component<MagicBallAppProps, MagicBall
     super()
 
     this.state = {
+      controlType: ControlType.CLICK,
       accelerationX: 0,
       accelerationY: 0,
       accelerationZ: 0,
@@ -39,6 +44,10 @@ export default class MagicBallApp extends Component<MagicBallAppProps, MagicBall
       window.addEventListener('devicemotion', (e: DeviceMotionEvent) => {
         this.onMotion(e)
       }, false)
+    } else {
+      this.setState({
+        controlType: ControlType.ORIENTATION
+      })
     }
   }
 
