@@ -7,5 +7,4 @@ import MagicBallApp from './components/MagicBallApp/MagicBallApp'
 
 const root = document.querySelector('#root')
 
-
 render(<MagicBallApp />, root)
