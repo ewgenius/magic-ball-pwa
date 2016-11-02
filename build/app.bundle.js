@@ -1,0 +1,1 @@
+webpackJsonp([0,1],[function(n,o,e){!function(){throw new Error('Cannot find module "/home/ewgenius/Projects/magicball/src/app.tsx"')}()}]);
