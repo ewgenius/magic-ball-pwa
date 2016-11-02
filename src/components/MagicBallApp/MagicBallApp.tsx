@@ -67,6 +67,15 @@ export default class MagicBallApp extends Component<MagicBallAppProps, MagicBall
     })
   }
 
+  /*
+  style={{
+            transform: `
+              rotateZ(${this.state.alpha - 180}deg) 
+              rotateX(${this.state.beta}deg) 
+              rotateY(${-this.state.gamma}deg)`
+          }}
+   */
+
   render() {
     return <Flex
       flexColumn
@@ -86,13 +95,9 @@ export default class MagicBallApp extends Component<MagicBallAppProps, MagicBall
         justify='center'
         flexAuto>
         <Box
+          className='triangle'
           align='center'
-          style={{
-            width: 200,
-            height: 200,
-            backgroundColor: '#000',
-            transform: `rotateZ(${this.state.alpha - 180}deg) rotateX(${this.state.beta}deg) rotateY(${-this.state.gamma}deg)`
-          }}></Box>
+          ></Box>
       </Flex>
     </Flex>
   }

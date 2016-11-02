@@ -2,3 +2,23 @@
   width: 100%;
   height: 100%;
 }
+
+$sqrt3: 1.73205080757;
+$triangleH: 500;
+$triangleSide: $triangleH / $sqrt3;
+.triangle {
+  width: #{2 * $triangleSide}px;
+  height: #{2 * $triangleSide}px;
+  background-color: #000;
+  position: relative;
+  color: #fff;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    height: 0px;
+    width: 0px;
+    border: #{$triangleSide}px solid transparent;
+    border-bottom: #{$triangleH}px solid green
+  }
+}
