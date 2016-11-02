@@ -4,7 +4,7 @@
 }
 
 $sqrt3: 1.73205080757;
-$triangleH: 500;
+$triangleH: 200;
 $triangleSide: $triangleH / $sqrt3;
 .triangle {
   width: #{2 * $triangleSide}px;
