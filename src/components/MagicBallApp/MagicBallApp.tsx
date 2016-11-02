@@ -96,7 +96,13 @@ export default class MagicBallApp extends Component<MagicBallAppProps, MagicBall
         flexAuto>
         <Box
           className='triangle'
-          align='center'>
+          align='center'
+          style={{
+            transform: `
+              rotateZ(${this.state.alpha - 180}deg) 
+              rotateX(${this.state.beta}deg) 
+              rotateY(${-this.state.gamma}deg)`
+          }}>
           <span>text</span>
         </Box>
       </Flex>
